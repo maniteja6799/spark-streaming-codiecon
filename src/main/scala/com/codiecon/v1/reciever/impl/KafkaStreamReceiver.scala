@@ -1,5 +1,6 @@
 package com.codiecon.v1.reciever.impl
 
+import com.codiecon.v1.processor.impl.TwitterStreamProcessor
 import com.codiecon.v1.reciever.StreamReceiver
 import kafka.serializer.StringDecoder
 import org.apache.spark.streaming.StreamingContext
@@ -16,7 +17,7 @@ object KafkaStreamReceiver extends StreamReceiver {
     val data = stream.transform(x => x.values)
     stream.print()
     logger.debug(f"stream received - $data")
-//    TwitterProcessor.processStream(data)
+    TwitterStreamProcessor.processStream(data)
 
   }
 }

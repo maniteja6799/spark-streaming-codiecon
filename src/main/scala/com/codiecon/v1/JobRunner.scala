@@ -14,11 +14,11 @@ object JobRunner {
 
     val conf = ConfigFactory.load()
 
-    val kafkaMetadataBrokerList = conf.getString("compute-layer.kafka-metadata-broker-list")
-    val kafkaAutoOffsetReset = conf.getString("compute-layer.kafka-auto-offset-reset")
-    val kafkaTopicName = conf.getString("compute-layer.kafka-topic-name")
-    val sparkStreamingAppName = conf.getString("compute-layer.spark-streaming-appname")
-    val sparkStreamingMaster = conf.getString("compute-layer.spark-streaming-master")
+    val kafkaMetadataBrokerList = conf.getString("codiecon.kafka-metadata-broker-list")
+    val kafkaAutoOffsetReset = conf.getString("codiecon.kafka-auto-offset-reset")
+    val kafkaTopicName = conf.getString("codiecon.kafka-topic-name")
+    val sparkStreamingAppName = conf.getString("codiecon.spark-streaming-appname")
+    val sparkStreamingMaster = conf.getString("codiecon.spark-streaming-master")
 
     val sparkConf = new SparkConf().setAppName(sparkStreamingAppName).setMaster(sparkStreamingMaster)
     val sc = new SparkContext(sparkConf)
